@@ -1,0 +1,55 @@
+plugins {
+  id "org.springframework.boot" version "2.1.6.RELEASE"
+  id "com.palantir.docker" version "0.22.1"
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'com.palantir.docker'
+
+// This is used as the docker image prefix (org)
+group = 'pangu'
+
+bootJar {
+    baseName = 'rulesvc'
+    version =  '1.0.0'
+}
+
+task unpack(type: Copy) {
+    dependsOn bootJar
+    from(zipTree(tasks.bootJar.outputs.files.singleFile))
+    into("build/dependency")
+}
+docker {
+    name "${project.group}/${bootJar.baseName}"
+    copySpec.from(tasks.unpack.outputs).into("dependency")
+    buildArgs(['DEPENDENCY': "dependency"])
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal();
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes'
+    //implementation 'org.springframework.cloud:spring-cloud-starter-kubernetes-ribbon'
+    implementation 'com.sap.cloud.db.jdbc:ngdbc:2.4.59'
+        
+    testImplementation 'junit:junit'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR2"
+    }
+}
