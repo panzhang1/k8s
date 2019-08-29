@@ -1,28 +1,10 @@
 package com.sf.bizx.rule.model;
 
-import java.util.Date;
-
 public class Rule {
-    private Long rowId;
-    private Long internalCode;
     private String code;
     private String name;
-    private Date effectiveStartDate;
-    private Date effectiveEndDate;
     private String lastModifiedBy;
     
-    public Long getRowId() {
-        return rowId;
-    }
-    public void setRowId(Long rowId) {
-        this.rowId = rowId;
-    }
-    public Long getInternalCode() {
-        return internalCode;
-    }
-    public void setInternalCode(Long internalCode) {
-        this.internalCode = internalCode;
-    }
     public String getCode() {
         return code;
     }
@@ -35,18 +17,6 @@ public class Rule {
     public void setName(String name) {
         this.name = name;
     }
-    public Date getEffectiveStartDate() {
-        return effectiveStartDate;
-    }
-    public void setEffectiveStartDate(Date effectiveStartDate) {
-        this.effectiveStartDate = effectiveStartDate;
-    }
-    public Date getEffectiveEndDate() {
-        return effectiveEndDate;
-    }
-    public void setEffectiveEndDate(Date effectiveEndDate) {
-        this.effectiveEndDate = effectiveEndDate;
-    }
     public String getLastModifiedBy() {
         return lastModifiedBy;
     }
@@ -55,9 +25,14 @@ public class Rule {
     }
     @Override
     public String toString() {
-        return "Rule [rowId=" + rowId + ", internalCode=" + internalCode + ", code=" + code
-                + ", name=" + name + ", effectiveStartDate=" + effectiveStartDate
-                + ", effectiveEndDate=" + effectiveEndDate + ", lastModifiedBy=" + lastModifiedBy
-                + "]";
+        StringBuilder builder = new StringBuilder();
+        builder.append("Rule [code=");
+        builder.append(code);
+        builder.append(", name=");
+        builder.append(name);
+        builder.append(", lastModifiedBy=");
+        builder.append(lastModifiedBy);
+        builder.append("]");
+        return builder.toString();
     }
 }

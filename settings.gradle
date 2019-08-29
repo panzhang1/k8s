@@ -1,0 +1,2 @@
+include 'RuleSvc-k8s'
+include 'UserSvc-k8s'
