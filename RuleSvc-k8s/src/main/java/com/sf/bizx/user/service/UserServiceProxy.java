@@ -7,7 +7,7 @@ import com.sf.bizx.user.model.User;
 
 @Component
 public class UserServiceProxy {
-    private static final String MOCK_END_POINT = "http://usersvc/mock_user/";
+    private static final String MOCK_END_POINT = "http://usersvc:8080/mock_user/";
     
     public String getMockUserDisplayName(String userId) {
         RestTemplate restTemplate = new RestTemplate();
