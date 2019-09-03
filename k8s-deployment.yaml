@@ -16,12 +16,8 @@ spec:
       containers:
       - name: usersvc-image
         image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v1
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: hana
 ---
 apiVersion: v1
 kind: Service
@@ -41,7 +37,7 @@ kind: Deployment
 metadata:
   name: rulesvc-deploy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: rulesvc
@@ -53,12 +49,8 @@ spec:
       containers:
       - name: rulesvc-image
         image: repo-dev.successfactors.sap.corp/plumber/mock_rulesvc:v1
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: hana
 ---
 apiVersion: v1
 kind: Service
