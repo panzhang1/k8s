@@ -15,7 +15,19 @@ spec:
     spec:
       containers:
       - name: usersvc-image
-        image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v1
+        image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v2
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
         ports:
         - containerPort: 8080
 ---
@@ -37,7 +49,7 @@ kind: Deployment
 metadata:
   name: rulesvc-deploy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: rulesvc
@@ -48,7 +60,19 @@ spec:
     spec:
       containers:
       - name: rulesvc-image
-        image: repo-dev.successfactors.sap.corp/plumber/mock_rulesvc:v1
+        image: repo-dev.successfactors.sap.corp/plumber/mock_rulesvc:v2
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 15
+          timeoutSeconds: 1
         ports:
         - containerPort: 8080
 ---
