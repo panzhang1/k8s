@@ -10,21 +10,14 @@ apply plugin: 'com.palantir.docker'
 
 // This is used as the docker image prefix (org)
 group = 'k8s'
+version =  '1.0.0'
 
-bootJar {
-    baseName = 'rulesvc'
-    version =  '1.0.0'
-}
-
-task unpack(type: Copy) {
-    dependsOn bootJar
-    from(zipTree(tasks.bootJar.outputs.files.singleFile))
-    into("build/dependency")
-}
 docker {
-    name "${project.group}/${bootJar.baseName}"
-    copySpec.from(tasks.unpack.outputs).into("dependency")
-    buildArgs(['DEPENDENCY': "dependency"])
+    dependsOn bootJar
+    name "${project.group}/rulesvc:${project.version}"
+    files bootJar.getArchivePath()
+    dockerfile file('Dockerfile')
+    buildArgs(['BOOT_JAR': "${bootJar.getArchiveName()}"])
 }
 
 sourceCompatibility = 1.8

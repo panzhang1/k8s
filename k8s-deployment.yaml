@@ -61,18 +61,6 @@ spec:
       containers:
       - name: rulesvc-image
         image: repo-dev.successfactors.sap.corp/plumber/mock_rulesvc:v2
-        livenessProbe:
-          httpGet:
-            path: /actuator/health
-            port: 8080
-          initialDelaySeconds: 15
-          timeoutSeconds: 1
-        readinessProbe:
-          httpGet:
-            path: /actuator/health
-            port: 8080
-          initialDelaySeconds: 15
-          timeoutSeconds: 1
         ports:
         - containerPort: 8080
 ---
