@@ -1,4 +1,4 @@
-package com.sf.bizx.rule.model;
+package com.sf.hop.rule.model;
 
 public class Rule {
     private String code;

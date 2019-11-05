@@ -1,4 +1,4 @@
-package com.sf.bizx.user.service;
+package com.sf.hop.user.service;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.sf.bizx.user.controller.MockUserController;
-import com.sf.bizx.user.model.User;
+import com.sf.hop.user.controller.MockUserController;
+import com.sf.hop.user.model.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

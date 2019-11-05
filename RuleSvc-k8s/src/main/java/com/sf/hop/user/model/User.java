@@ -1,4 +1,4 @@
-package com.sf.bizx.user.model;
+package com.sf.hop.user.model;
 
 public class User {
     private String id;

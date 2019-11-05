@@ -1,4 +1,4 @@
-package com.sf.bizx.rule.controller;
+package com.sf.hop.rule.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sf.bizx.rule.model.Rule;
-import com.sf.bizx.user.service.UserServiceProxy;
+import com.sf.hop.rule.model.Rule;
+import com.sf.hop.user.service.UserServiceProxy;
 
 @RestController
 public class MockRuleController {

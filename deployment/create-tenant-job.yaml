@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: createtenant-usersvc
+spec:
+  template:
+    spec:
+      containers:
+      - name: createtenant-usersvc
+        image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v2
+        env:
+        - name: SERVER_TYPE
+          value: job
+      restartPolicy: Never
+  backoffLimit: 4
+

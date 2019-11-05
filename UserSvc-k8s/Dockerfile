@@ -5,4 +5,5 @@ ENV BOOT_JAR_NAME=$BOOT_JAR
 
 COPY $BOOT_JAR /
 
-ENTRYPOINT java -jar $BOOT_JAR_NAME
+#ENTRYPOINT java -jar $BOOT_JAR_NAME
+ENTRYPOINT ["sh", "-c", "java -Dserver.type=$server.type -DtenantId=$tenantId -jar $BOOT_JAR_NAME"]

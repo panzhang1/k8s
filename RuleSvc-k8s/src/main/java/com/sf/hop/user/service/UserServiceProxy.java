@@ -1,9 +1,9 @@
-package com.sf.bizx.user.service;
+package com.sf.hop.user.service;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.sf.bizx.user.model.User;
+import com.sf.hop.user.model.User;
 
 @Component
 public class UserServiceProxy {
