@@ -28,23 +28,18 @@ repositories {
     mavenCentral()
 }
 
-
-bootRun {
-    if (project.hasProperty('args')) {
-        args project.args.split(',')
-    }
-}
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-        
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+    implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR2"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3"
     }
 }

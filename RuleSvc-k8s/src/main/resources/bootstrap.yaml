@@ -1,7 +1,7 @@
 server:
-   port: 8080
+  port: 8080
 spring:
-   application:
-        name: rulersvc
-   profiles:
-        active: dev
+  application:
+    name: rulersvc
+  profiles:
+    active: dev

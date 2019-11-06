@@ -1,0 +1,4 @@
+platform:
+  tls:
+    tenantid: BizxTest
+    servertype: job

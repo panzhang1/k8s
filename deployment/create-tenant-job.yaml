@@ -9,8 +9,10 @@ spec:
       - name: createtenant-usersvc
         image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v2
         env:
-        - name: SERVER_TYPE
+        - name: PLATFORM_TLS_SERVERTYPE
           value: job
+        - name: PLATFORM_TLS_TENANTID
+          value: BizxTest 
       restartPolicy: Never
   backoffLimit: 4
 

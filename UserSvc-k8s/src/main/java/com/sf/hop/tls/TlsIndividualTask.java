@@ -1,12 +1,12 @@
-package com.sf.hop.user.job;
+package com.sf.hop.tls;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class JobTask {
-    private static final Logger LOG = LoggerFactory.getLogger(JobTask.class);
+public class TlsIndividualTask {
+    private static final Logger LOG = LoggerFactory.getLogger(TlsIndividualTask.class);
     private String tenantId;
-    public JobTask(String tenantId) {
+    public TlsIndividualTask(String tenantId) {
         this.tenantId = tenantId;
     }
 
