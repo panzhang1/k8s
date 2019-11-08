@@ -14,8 +14,7 @@ version =  '1.0.0'
 
 docker {
     dependsOn bootJar
-    //name "${project.group}/usersvc:${project.version}"
-    name "${project.group}/usersvc"
+    name "${project.group}/tls:${project.version}"
     files bootJar.getArchivePath()
     dockerfile file('Dockerfile')
     buildArgs(['BOOT_JAR': "${bootJar.getArchiveName()}"])
@@ -34,6 +33,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+    implementation 'io.kubernetes:client-java:6.0.1'
+
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

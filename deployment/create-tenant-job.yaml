@@ -1,18 +1,21 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: createtenant-usersvc
+  name: tls-activity
 spec:
+  ttlSecondsAfterFinished: 120
+  backoffLimit: 3
+  activeDeadlineSeconds: 600
   template:
     spec:
       containers:
-      - name: createtenant-usersvc
-        image: repo-dev.successfactors.sap.corp/plumber/mock_usersvc:v2
+      - name: tls-activity
+        image: repo-dev.successfactors.sap.corp/plumber/tls_activity:latest
+        imagePullPolicy: Always
         env:
         - name: PLATFORM_TLS_SERVERTYPE
           value: job
         - name: PLATFORM_TLS_TENANTID
           value: BizxTest 
       restartPolicy: Never
-  backoffLimit: 4
-
+  backoffLimit: 3
