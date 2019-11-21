@@ -1,15 +1,15 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: tls-activity
+  name: tlms-activity
+  labels:
+    tenant: CreateTenant
 spec:
-  ttlSecondsAfterFinished: 120
   backoffLimit: 3
-  activeDeadlineSeconds: 600
   template:
     spec:
       containers:
-      - name: tls-activity
+      - name: tlms-activity
         image: repo-dev.successfactors.sap.corp/plumber/tls_activity:latest
         imagePullPolicy: Always
         env:
@@ -18,4 +18,3 @@ spec:
         - name: PLATFORM_TLS_TENANTID
           value: BizxTest 
       restartPolicy: Never
-  backoffLimit: 3

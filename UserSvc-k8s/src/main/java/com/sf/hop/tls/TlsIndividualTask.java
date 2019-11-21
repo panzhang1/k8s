@@ -3,6 +3,8 @@ package com.sf.hop.tls;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class TlsIndividualTask {
     private static final Logger LOG = LoggerFactory.getLogger(TlsIndividualTask.class);
     private String tenantId;
@@ -14,7 +16,7 @@ public class TlsIndividualTask {
         LOG.info(String.format("start doTask for %s",tenantId));
 
         try {
-            Thread.sleep(60000);
+            TimeUnit.SECONDS.sleep(60);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

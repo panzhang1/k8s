@@ -35,6 +35,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: usersvc
+  labels:
+    tenant: TenantLifeCycle
 spec:
   type: ClusterIP
   ports:
@@ -68,6 +70,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rulesvc
+  labels:
+    tenant: TenantLifeCycle
 spec:
   type: ClusterIP
   ports:
