@@ -10,14 +10,14 @@ import com.sf.hop.user.model.User;
 
 @RestController
 public class MockUserController {
-    private static final Logger LOG = LoggerFactory.getLogger(MockUserController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MockUserController.class);
     
     @GetMapping(value = "/mock_user/{userId}")
     public User getUser(@PathVariable(value="userId") String userId) {
         User user = new User(userId,userId + "_Name");
         user.setFirstName(userId + "_FirstName");
         user.setLastName(userId + "_LastName");
-        LOG.info(String.format("-----------getUser:%s", user.toString()));
+        LOGGER.info(String.format("-----------getUser:%s", user.toString()));
         return user;
     }
 }

@@ -28,7 +28,10 @@ public class KafkaProduceExample {
         props.put("sasl.jaas.config","org.apache.kafka.common.security.plain.PlainLoginModule required username=\"sebadmin\" password=\"local123!\";");
 
         Producer<String, String> producer = new KafkaProducer<>(props);
-        producer.send(new ProducerRecord<>("kafka.topic.zp.test.v1", "key1", "value1"));
+        for (int i=0; i< 10; i++) {
+            producer.send(new ProducerRecord<>("kafka.topic.zp.test1.v1", "key1", "value" + i));
+            producer.send(new ProducerRecord<>("kafka.topic.zp.test2.v1", "key1", "value" + i));
+        }
         producer.close();
     }
 }
