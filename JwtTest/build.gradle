@@ -14,7 +14,8 @@ version =  '1.0.0'
 
 docker {
     dependsOn bootJar
-    name "${project.group}/rulesvc:${project.version}"
+    //name "${project.group}/usersvc:${project.version}"
+    name "${project.group}/usersvc"
     files bootJar.getArchivePath()
     dockerfile file('Dockerfile')
     buildArgs(['BOOT_JAR': "${bootJar.getArchiveName()}"])
@@ -31,7 +32,11 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-        
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+    implementation 'org.springframework.security:spring-security-oauth2-jose'
+    implementation 'org.springframework.security:spring-security-oauth2-resource-server'
+
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

@@ -1,0 +1,8 @@
+FROM openjdk:8-jre-alpine
+
+ARG BOOT_JAR
+ENV BOOT_JAR_NAME=$BOOT_JAR
+
+COPY $BOOT_JAR /
+
+ENTRYPOINT java -jar $BOOT_JAR_NAME

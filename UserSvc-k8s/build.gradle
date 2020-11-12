@@ -1,5 +1,5 @@
 plugins {
-  id "org.springframework.boot" version "2.1.6.RELEASE"
+  id "org.springframework.boot" version "2.2.6.RELEASE"
   id "com.palantir.docker" version "0.22.1"
 }
 apply plugin: 'java'
@@ -32,14 +32,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
     implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR3"
     }
 }
