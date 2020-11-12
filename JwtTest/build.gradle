@@ -38,7 +38,7 @@ dependencies {
     implementation 'org.springframework.security:spring-security-oauth2-resource-server'
 
     testImplementation 'junit:junit'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-com.zp.example.test'
 }
 
 dependencyManagement {

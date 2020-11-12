@@ -1,5 +1,5 @@
 plugins {
-  id "org.springframework.boot" version "2.2.6.RELEASE"
+  id "org.springframework.boot" version "2.3.5.RELEASE"
   id "com.palantir.docker" version "0.22.1"
 }
 apply plugin: 'java'
@@ -36,12 +36,15 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
     implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation 'org.apache.kafka:kafka-clients:2.6.0'
+
     testImplementation 'junit:junit'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-com.zp.example.test'
 }
 
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR3"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR8"
     }
 }
