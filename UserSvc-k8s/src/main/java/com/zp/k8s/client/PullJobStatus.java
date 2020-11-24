@@ -1,4 +1,4 @@
-package com.successfactors.platform.k8s.client;
+package com.zp.k8s.client;
 
 public enum PullJobStatus {
     SUCCESS,

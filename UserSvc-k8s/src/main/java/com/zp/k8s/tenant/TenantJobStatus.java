@@ -1,4 +1,4 @@
-package com.successfactors.platform.k8s.tenant;
+package com.zp.k8s.tenant;
 
 public enum TenantJobStatus {
     SUCCESS,

@@ -1,4 +1,4 @@
-package com.successfactors.platform.k8s.client;
+package com.zp.k8s.client;
 
 import io.fabric8.kubernetes.api.model.HasMetadata;
 import io.fabric8.kubernetes.api.model.Service;

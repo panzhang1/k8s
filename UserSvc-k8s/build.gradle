@@ -38,6 +38,11 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation 'org.apache.kafka:kafka-clients:2.6.0'
+    implementation 'io.fabric8:kubernetes-client:4.6.4'
+    implementation 'io.fabric8:kubernetes-model:4.6.4'
+
+    testImplementation 'io.fabric8:kubernetes-server-mock:4.6.4'
+    testImplementation 'io.fabric8:mockwebserver:0.1.7'
 
     testImplementation 'junit:junit'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

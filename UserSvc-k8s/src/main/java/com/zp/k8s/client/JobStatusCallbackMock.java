@@ -1,4 +1,4 @@
-package com.successfactors.platform.k8s.client;
+package com.zp.k8s.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

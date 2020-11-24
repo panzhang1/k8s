@@ -1,8 +1,8 @@
-package com.successfactors.platform.k8s.tenant;
+package com.zp.k8s.tenant;
 
-import com.successfactors.platform.k8s.client.JobStatusCallbackMock;
-import com.successfactors.platform.k8s.client.K8sClient;
-import com.successfactors.platform.k8s.client.PullJobStatus;
+import com.zp.k8s.client.JobStatusCallbackMock;
+import com.zp.k8s.client.K8sClient;
+import com.zp.k8s.client.PullJobStatus;
 import io.fabric8.kubernetes.api.model.batch.Job;
 import io.fabric8.kubernetes.api.model.batch.JobBuilder;
 import io.fabric8.kubernetes.client.DefaultKubernetesClient;
