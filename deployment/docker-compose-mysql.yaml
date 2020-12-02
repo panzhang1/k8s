@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  mysql:
+    container_name: mysql-dev
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    command: --lower_case_table_names=1
+    networks:
+      - tenant-lifecycle-network
+networks:
+  tenant-lifecycle-network:
+    driver: bridge
