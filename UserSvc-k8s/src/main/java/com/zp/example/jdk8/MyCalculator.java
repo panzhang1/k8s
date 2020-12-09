@@ -1,4 +1,4 @@
-package com.zp.example.calculator;
+package com.zp.example.jdk8;
 
 
 public class MyCalculator {

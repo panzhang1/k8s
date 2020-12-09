@@ -1,4 +1,4 @@
-package com.zp.example.thread;
+package com.zp.example.multithread;
 
 import java.util.concurrent.TimeUnit;
 

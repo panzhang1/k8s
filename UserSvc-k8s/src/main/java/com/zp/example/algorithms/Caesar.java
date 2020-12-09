@@ -1,7 +1,7 @@
 /*
  * $Id$
  */
-package com.zp.example.datastructure;
+package com.zp.example.algorithms;
 
 public class Caesar {
   public static final int ALPHASIZE = 26;

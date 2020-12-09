@@ -1,7 +1,7 @@
 /*
  * $Id$
  */
-package com.zp.example.test;
+package com.zp.example.misc;
 
 import java.io.Serializable;
 
